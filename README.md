@@ -1,12 +1,50 @@
-# React + Vite
+# React_StepShoes
+# StepShoes 👟 – Sitio Web Oficial
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este repositorio contiene el desarrollo del sitio web **StepShoes**, una tienda de calzado orientada a la venta, promoción y contacto con clientes, ahora reimplementada con **React** y **Bootstrap** para una experiencia moderna, dinámica y escalable.
 
-Currently, two official plugins are available:
+## 🚀 Tecnologías Utilizadas
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [React](https://reactjs.org/) – Librería para construir interfaces de usuario.
+- [Vite](https://vitejs.dev/) – Herramienta de construcción rápida para proyectos frontend.
+- [Bootstrap 5](https://getbootstrap.com/) – Framework de diseño responsivo.
+- [React Router DOM](https://reactrouter.com/) – Para navegación entre rutas.
+- [Firebase] – Para autenticación y base de datos en tiempo real.
 
-## Expanding the ESLint configuration
+## 📂 Estructura del Proyecto
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Mejoras Realizadas
+
+### 🔁 Reescritura en React
+- El proyecto fue migrado completamente de HTML/CSS estático a React, utilizando componentes modulares y reutilizables.
+- Uso de `react-router-dom` para navegación fluida sin recargar la página.
+
+### 💅 Diseño y Estilo
+- Integración de **Bootstrap 5** para un diseño moderno y responsivo.
+- Separación clara entre estructura (`.jsx`) y estilo (`.css`).
+
+### 🔄 Organización
+- Estructura organizada por funcionalidades: `components`, `assets`, `database`.
+- Mejora en la legibilidad del código y facilidad de mantenimiento.
+
+### 📱 Responsividad
+- Sitio web ahora completamente adaptable a dispositivos móviles, tabletas y escritorio.
+
+### ⚙️ Preparación para Backend
+- Archivo `firebase.js` añadido para futura integración con Firebase (registro/login/contacto).
+
+## 🌐 Páginas Incluidas
+
+- **Home** – Página principal con banner/carrusel y bienvenida.
+- **Nosotros** – Información sobre la empresa.
+- **Servicios** – Detalles de lo que ofrece StepShoes.
+- **Galería** – Visualización de productos.
+- **Contacto** – Formulario para comunicarse.
+- **Login / Registro** – Interfaces para autenticación (en desarrollo).
+
+## ✅ Cómo ejecutar el proyecto
+# Instalar dependencias
+npm install
+
+# Iniciar servidor de desarrollo
+npm run dev
