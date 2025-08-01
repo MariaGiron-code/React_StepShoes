@@ -22,7 +22,6 @@ const Galeria = () => {
               <h3 className={styles.productName}>{producto.nombre}</h3>
               <p className={styles.productPrice}>{producto.precio}</p>
               <button className={styles.addButton}>Reservar </button>
-              <button className={styles.detailsButton}>Detalles</button>
             </div>
             <div className={styles.productDescription}>
               <p>Descripción breve del producto. Ideal para uso diario y actividades deportivas.</p>
