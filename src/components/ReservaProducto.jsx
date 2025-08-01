@@ -54,7 +54,7 @@ const ReservaProducto = () => {
           />
         </div>
         <div className={styles.formGroup}>
-          <label>Nombre Completo:</label>
+          <label>Nombre Completo del Cliente:</label>
           <input
             type="text"
             name="nombre"
