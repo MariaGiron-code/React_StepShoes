@@ -36,17 +36,17 @@ Publicar el sitio usando GitHub Pages para su acceso público.
 🛠️ Git y GitHub – Control de versiones y gestión colaborativa.
 
 -- Funcionalidades del Sitio
-✅ Menú de navegación con enlaces a Inicio, Nosotros, Servicios, Galería, Contacto y Login.
+Menú de navegación con enlaces a Inicio, Nosotros, Servicios, Galería, Contacto y Login.
 
-✅ Catálogo de productos con nombre, imagen, tallas y colores disponibles.
+Catálogo de productos con nombre, imagen, tallas y colores disponibles.
 
-✅ Formularios de login y registro conectados a Firebase (autenticación).
+Formularios de login y registro conectados a Firebase (autenticación).
 
-✅ Formulario de contacto funcional conectado a Firebase (registro de mensajes).
+Formulario de reserva de productos funcional conectado a Firebase (registro de reserva).
 
-✅ Pie de página con datos de contacto y redes sociales.
+Pie de página con datos de contacto y redes sociales.
 
-✅ Diseño responsive adaptado a dispositivos móviles, tablets y PC.
+Diseño responsive adaptado a dispositivos móviles, tablets y PC.
 
 -- Integración con Firebase
 Se implementó la conexión a Firebase para:
