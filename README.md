@@ -56,8 +56,10 @@ Se implementó la conexión a Firebase para:
 📩 Registro de formularios (contacto y servicios personalizados).
 
 
-## Cómo ejecutar el proyecto
-# Instalar dependencias
+Cómo ejecutar el proyecto?
+Clonar el repositorio
+# Instalar dependencias: Ehecuta en tu terminal del IDE lo siguiente:
+Aegurate de estar en el directorio correcto donde clonaste el proyecto, luego,
 npm install
 
 # Iniciar servidor de desarrollo
