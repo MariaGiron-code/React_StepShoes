@@ -1,5 +1,5 @@
 # React_StepShoes
-👟 StepSHOES Web
+StepSHOES Web
 Este repositorio contiene el desarrollo de la página web oficial de StepSHOES, una tienda de sneakers urbanos, diseñada e implementada con tecnologías modernas como React, Bootstrap y Firebase.
 
  Descripción General
