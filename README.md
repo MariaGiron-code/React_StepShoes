@@ -1,49 +1,65 @@
 # React_StepShoes
-# StepShoes 👟 – Sitio Web Oficial
+StepSHOES Web
+Este repositorio contiene el desarrollo de la página web oficial de StepSHOES, una tienda de sneakers urbanos, diseñada e implementada con tecnologías modernas como React, Bootstrap y Firebase.
 
-Este repositorio contiene el desarrollo del sitio web **StepShoes**, una tienda de calzado orientada a la venta, promoción y contacto con clientes, ahora reimplementada con **React** y **Bootstrap** para una experiencia moderna, dinámica y escalable.
+ Descripción General
+El proyecto nació con el objetivo de construir una página web funcional, responsiva y visualmente atractiva para una tienda de calzado deportivo urbano. Se trabajó desde la etapa de prototipado hasta la implementación final, integrando herramientas de diseño, desarrollo web y backend.
 
-## Tecnologías Utilizadas
+🎯 Objetivos del Proyecto
+Objetivo General
+Desarrollar una página web responsiva y moderna utilizando React y conectada a una base de datos en Firebase, aplicando principios de diseño centrado en el usuario.
 
-- [React](https://reactjs.org/) – Librería para construir interfaces de usuario.
-- [Vite](https://vitejs.dev/) – Herramienta de construcción rápida para proyectos frontend.
-- [Bootstrap 5](https://getbootstrap.com/) – Framework de diseño responsivo.
-- [React Router DOM](https://reactrouter.com/) – Para navegación entre rutas.
-- [Firebase] – Para autenticación y base de datos en tiempo real.
+Objetivos Específicos
+Aprender y aplicar herramientas de prototipado como Ninja Mock (baja fidelidad) y Figma (alta fidelidad).
 
-## Estructura del Proyecto
+Diseñar una interfaz web intuitiva y coherente con la identidad visual de StepSHOES.
 
-## Mejoras Realizadas
+Desarrollar la web utilizando React, integrando componentes modulares reutilizables.
 
-### Reescritura en React
-- El proyecto fue migrado completamente de HTML/CSS estático a React, utilizando componentes modulares y reutilizables.
-- Uso de `react-router-dom` para navegación fluida sin recargar la página.
+Utilizar Bootstrap para mejorar el diseño responsivo de la interfaz.
 
-### Diseño y Estilo
-- Integración de **Bootstrap 5** para un diseño moderno y responsivo.
-- Separación clara entre estructura (`.jsx`) y estilo (`.css`).
+Conectar los formularios de login, registro y contacto con Firebase, permitiendo el almacenamiento y gestión de usuarios en la nube.
 
-### Organización
-- Estructura organizada por funcionalidades: `components`, `assets`, `database`.
-- Mejora en la legibilidad del código y facilidad de mantenimiento.
+Publicar el sitio usando GitHub Pages para su acceso público.
 
-### Responsividad
-- Sitio web ahora completamente adaptable a dispositivos móviles, tabletas y escritorio.
+-- Tecnologías Utilizadas
+⚛️ React JS – Framework para el desarrollo de interfaces SPA.
 
-### Preparación para Backend
-- Archivo `firebase.js` añadido para futura integración con Firebase (registro/login/contacto).
+🎨 CSS Modules – Para aplicar estilos encapsulados por componente.
 
-## Páginas Incluidas
+💠 Bootstrap 5 – Para diseño responsivo rápido y moderno.
 
-- **Home** – Página principal con banner/carrusel y bienvenida.
-- **Nosotros** – Información sobre la empresa.
-- **Servicios** – Detalles de lo que ofrece StepShoes.
-- **Galería** – Visualización de productos.
-- **Contacto** – Formulario para comunicarse.
-- **Login / Registro** – Interfaces para autenticación (en desarrollo).
+🔥 Firebase – Como backend para autenticación y base de datos en la nube.
 
-## Cómo ejecutar el proyecto
-# Instalar dependencias
+💻 Visual Studio Code – Editor de código principal.
+
+🛠️ Git y GitHub – Control de versiones y gestión colaborativa.
+
+-- Funcionalidades del Sitio
+Menú de navegación con enlaces a Inicio, Nosotros, Servicios, Galería, Contacto y Login.
+
+Catálogo de productos con nombre, imagen, tallas y colores disponibles.
+
+Formularios de login y registro conectados a Firebase (autenticación).
+
+Formulario de reserva de productos funcional conectado a Firebase (registro de reserva).
+
+Pie de página con datos de contacto y redes sociales.
+
+Diseño responsive adaptado a dispositivos móviles, tablets y PC.
+
+-- Integración con Firebase
+Se implementó la conexión a Firebase para:
+
+🔑 Autenticación de usuarios mediante email y contraseña.
+
+📩 Registro de formularios (contacto y servicios personalizados).
+
+
+Cómo ejecutar el proyecto?
+Clonar el repositorio
+# Instalar dependencias: Ehecuta en tu terminal del IDE lo siguiente:
+Aegurate de estar en el directorio correcto donde clonaste el proyecto, luego,
 npm install
 
 # Iniciar servidor de desarrollo
