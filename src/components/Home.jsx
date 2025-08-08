@@ -1,6 +1,9 @@
 import styles from '../styles/Home.module.css';
-
+import { useEffect } from 'react';
 const Home = () => {
+  useEffect(() => {
+    document.title = 'StepSHOES - Inicio';
+  }, []);
   return (
     <>
       <section className={styles.banner}>

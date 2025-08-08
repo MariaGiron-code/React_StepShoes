@@ -1,5 +1,5 @@
 import { useState } from 'react';
-
+import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from '../styles/Registro.module.css';
 

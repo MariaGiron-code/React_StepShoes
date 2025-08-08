@@ -1,6 +1,9 @@
 import styles from '../styles/Footer.module.css';
-
+import { useEffect } from 'react';
 const Footer = () => {
+  useEffect(() => {
+    document.title = 'StepSHOES - Pie de página';
+  }, []);
   return (
     <footer className={styles.footer}>
       <div className={styles.infoSection}>

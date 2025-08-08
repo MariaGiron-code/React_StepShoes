@@ -3,6 +3,9 @@ import { Link, useNavigate } from 'react-router-dom';
 import styles from '../styles/Login.module.css';
 
 const Login = () => {
+  useEffect(() => {
+    document.title = 'StepSHOES - Iniciar Sesión';
+  }, []);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [role, setRole] = useState('Cliente');

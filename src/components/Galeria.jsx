@@ -1,6 +1,9 @@
 import styles from '../styles/Galeria.module.css';
-
+import { useEffect } from 'react';
 const Galeria = () => {
+  useEffect(() => {
+    document.title = 'StepSHOES - Galería';
+  }, []);
   // Array estático con 6 productos
   const productos = [
     { id: 1, nombre: 'Zapatilla Clásica', precio: '$50', imagen: 'https://via.placeholder.com/300x200?text=Producto+1' },

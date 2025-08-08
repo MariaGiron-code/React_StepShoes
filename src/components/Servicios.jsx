@@ -1,6 +1,9 @@
 import styles from '../styles/Servicios.module.css';
-
+import { useEffect } from 'react';
 const Servicios = () => {
+  useEffect(() => {
+    document.title = 'StepSHOES - Servicios';
+  }, []);
   return (
     <main className={styles.main}>
       <section className={styles.containerServicio}>

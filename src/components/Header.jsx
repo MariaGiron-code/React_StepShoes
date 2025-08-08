@@ -1,7 +1,10 @@
 import { NavLink } from 'react-router-dom';
 import styles from '../styles/Header.module.css';
-
+import { useEffect } from 'react';
 const Header = () => {
+  useEffect(() => {
+    document.title = 'StepSHOES - Menu Principal';
+  }, []);
   return (
     <header className={styles.header}>
       <div className={styles.container}>
