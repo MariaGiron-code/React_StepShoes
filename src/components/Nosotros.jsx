@@ -1,9 +1,6 @@
 import styles from '../styles/Nosotros.module.css';
-import { useEffect } from 'react';
+
 const Nosotros = () => {
-  useEffect(() => {
-    document.title = 'StepSHOES - Nosotros';
-  }, []);
   return (
     <main className={styles.main}>
       <section className={styles.nosotrosSection}>
