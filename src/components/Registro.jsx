@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
+import { getFirestore, doc, setDoc } from 'firebase/firestore';
 import styles from '../styles/Registro.module.css';
 
 const Registro = () => {
@@ -9,20 +11,43 @@ const Registro = () => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const navigate = useNavigate();
+  const auth = getAuth();
+  const db = getFirestore();
 
   const handleRegister = async (e) => {
     e.preventDefault();
+    setError('');
+
     try {
+      // Create user with Firebase Authentication
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-      await setDoc(doc(db, 'users', userCredential.user.uid), {
-        name,
-        cedula,
-        email,
-        role: 'Cliente'
+      const user = userCredential.user;
+
+      // Store additional user data in Firestore
+      await setDoc(doc(db, 'users', user.uid), {
+        name: name.trim(),
+        cedula: cedula.trim(),
+        email: email.trim(),
+        role: 'Cliente',
+        createdAt: new Date().toISOString()
       });
-      navigate('/login');
+
+      navigate('/login'); // Redirect to login page after successful registration
     } catch (err) {
-      setError('Error al registrar. Verifica los datos.');
+      // Handle specific Firebase errors
+      switch (err.code) {
+        case 'auth/email-already-in-use':
+          setError('El correo ya está registrado.');
+          break;
+        case 'auth/invalid-email':
+          setError('El correo electrónico no es válido.');
+          break;
+        case 'auth/weak-password':
+          setError('La contraseña debe tener al menos 6 caracteres.');
+          break;
+        default:
+          setError('Error al registrar: ' + err.message);
+      }
     }
   };
 

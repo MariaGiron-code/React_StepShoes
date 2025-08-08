@@ -1,20 +1,29 @@
 import { useState } from 'react';
+import { getFirestore, collection, addDoc } from 'firebase/firestore';
+import { db } from '../firebase';
 import styles from '../styles/Contacto.module.css';
 
-
 const Contacto = () => {
-  
   const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
   const [success, setSuccess] = useState('');
+  const [error, setError] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setSuccess('');
+    setError('');
+
     try {
-      await addDoc(collection(db, 'messages'), formData);
+      await addDoc(collection(db, 'messages'), {
+        ...formData,
+        timestamp: new Date().toISOString(),
+        date: new Date().toLocaleString('es-EC', { timeZone: 'America/Guayaquil' })
+      });
       setSuccess('Mensaje enviado con éxito');
       setFormData({ name: '', email: '', subject: '', message: '' });
     } catch (err) {
       console.error(err);
+      setError('Error al enviar el mensaje. Inténtalo de nuevo.');
     }
   };
 
@@ -92,6 +101,7 @@ const Contacto = () => {
             <button type="submit">Enviar Mensaje</button>
           </form>
           {success && <p className={styles.success}>{success}</p>}
+          {error && <p className={styles.error}>{error}</p>}
         </div>
       </div>
     </main>

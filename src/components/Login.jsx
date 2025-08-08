@@ -1,5 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 import styles from '../styles/Login.module.css';
 
 const Login = () => {
@@ -8,23 +9,24 @@ const Login = () => {
   const [role, setRole] = useState('Cliente');
   const [error, setError] = useState('');
   const navigate = useNavigate();
+  const auth = getAuth();
 
-  useEffect(() => {
-    // Simula que ya está autenticado si hay un email en el estado
-    if (email && password) {
-      navigate('/reservaProducto');
-    }
-  }, [email, navigate]);
-
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-    const testEmail = 'mary@gmail.com';
-    const testPassword = '1234';
+    setError('');
 
-    if (email === testEmail && password === testPassword) {
-      navigate('/reservaProducto'); // Redirige a /reserva al login exitoso
-    } else {
-      setError('Correo o contraseña incorrectos');
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+      navigate('/reservaProducto'); 
+    } catch (error) {
+      if(error.code ) {
+        setError('Usuario no registrado. Redirigiendo a registro...');
+        setTimeout(() => navigate('/registro'), 2000); 
+      }else if (error.code === 'auth/wrong-password') {
+        setError('Contraseña incorrecta');
+      } else {
+        setError('Error al iniciar sesión: ' + error.message);
+      }
     }
   };
 

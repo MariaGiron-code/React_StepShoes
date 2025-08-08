@@ -1,5 +1,8 @@
-import { useState } from 'react'; 
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
+import { collection, addDoc } from 'firebase/firestore';
+import { db } from '../firebase';
 import styles from '../styles/ReservaProducto.module.css';
 
 const ReservaProducto = () => {
@@ -7,31 +10,71 @@ const ReservaProducto = () => {
     modelo: '',
     talla: '',
     nombre: '',
-    email: 'mary@gmail.com' // Email quemado consistente con Login
+    email: ''
   });
   const [reservaId, setReservaId] = useState(null);
+  const [error, setError] = useState('');
   const navigate = useNavigate();
+  const auth = getAuth();
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setFormData((prev) => ({ ...prev, email: user.email }));
+      } else {
+        setError('Debes iniciar sesión para hacer una reserva.');
+        navigate('/login');
+      }
+    });
+
+    return () => unsubscribe();
+  }, [auth, navigate]);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const newReservaId = `res_${Date.now()}`; // Simula un ID único
-    setReservaId(newReservaId);
-    alert('Reserva creada con éxito!');
+    setError('');
+
+    if (!auth.currentUser) {
+      setError('Debes iniciar sesión para hacer una reserva.');
+      navigate('/login');
+      return;
+    }
+
+    try {
+      const docRef = await addDoc(collection(db, 'reservas'), {
+        modelo: formData.modelo.trim(),
+        talla: formData.talla.trim(),
+        nombre: formData.nombre.trim(),
+        email: formData.email.trim(),
+        fecha: new Date().toISOString(),
+        userId: auth.currentUser.uid
+      });
+
+      setReservaId(docRef.id);
+      alert('Reserva creada con éxito!');
+    } catch (error) {
+      if (error.code === 'permission-denied') {
+        setError('No tienes permisos para crear esta reserva. Contacta al administrador.');
+      } else {
+        setError('Error al crear la reserva: ' + error.message);
+      }
+    }
   };
 
   const handleDelete = () => {
     setReservaId(null);
-    setFormData({ modelo: '', talla: '', nombre: '', email: 'mary@gmail.com' });
-    alert('Reserva eliminada con éxito!');
+    setFormData({ modelo: '', talla: '', nombre: '', email: formData.email });
+    alert('Reserva eliminada localmente.');
   };
 
   return (
     <div className={styles.container}>
       <h2>Reservar Zapato</h2>
+      {error && <p className={styles.error}>{error}</p>}
       <form onSubmit={handleSubmit} className={styles.form}>
         <div className={styles.formGroup}>
           <label>Modelo del Zapato:</label>
@@ -69,18 +112,20 @@ const ReservaProducto = () => {
             type="email"
             name="email"
             value={formData.email}
-            onChange={handleChange}
             readOnly
           />
         </div>
         <button type="submit">Reservar</button>
         {reservaId && (
-          <button type="button" onClick={handleDelete} className={styles.deleteButton}>
+          <button
+            type="button"
+            onClick={handleDelete}
+            className={styles.deleteButton}
+          >
             Eliminar Reserva
           </button>
         )}
       </form>
-      {reservaId && <p>Reserva ID: {reservaId}</p>}
     </div>
   );
 };
