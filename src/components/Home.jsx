@@ -20,7 +20,7 @@ const Home = () => {
                 </div>
               </div>
               <div className="carousel-item">
-                <img src="/imagenes/imag" className="d-block w-100" alt="Sneaker 3" />
+                <img src="/imagenes/imagen7.jpg" className="d-block w-100" alt="Sneaker 3" />
                 <div className="carousel-caption d-none d-md-block">
                 </div>
               </div>
