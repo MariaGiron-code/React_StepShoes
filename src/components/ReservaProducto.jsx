@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth';
-import { collection, addDoc } from 'firebase/firestore';
+import { collection, addDoc, deleteDoc, doc } from 'firebase/firestore';
 import { db } from '../firebase';
 import styles from '../styles/ReservaProducto.module.css';
 
@@ -65,10 +65,17 @@ const ReservaProducto = () => {
     }
   };
 
-  const handleDelete = () => {
-    setReservaId(null);
-    setFormData({ modelo: '', talla: '', nombre: '', email: formData.email });
-    alert('Reserva eliminada localmente.');
+  const handleDelete = async () => {
+    try {
+      if (reservaId) {
+        await deleteDoc(doc(db, 'reservas', reservaId));
+        setReservaId(null);
+        setFormData({ modelo: '', talla: '', nombre: '', email: formData.email });
+        alert('Reserva eliminada con éxito.');
+      }
+    } catch (error) {
+      setError('Error al eliminar la reserva: ' + error.message);
+    }
   };
 
   const handleLogout = async () => {
