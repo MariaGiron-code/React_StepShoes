@@ -5,12 +5,12 @@ import styles from '../styles/Galeria.module.css';
 
 const Galeria = () => {
   const productos = [
-    { id: 1, nombre: 'Zapatilla Clásica', precio: '$50', imagen: 'https://via.placeholder.com/300x200?text=Producto+1' },
-    { id: 2, nombre: 'Zapatilla Deportiva', precio: '$70', imagen: 'https://via.placeholder.com/300x200?text=Producto+2' },
-    { id: 3, nombre: 'Zapatilla Elegante', precio: '$90', imagen: 'https://via.placeholder.com/300x200?text=Producto+3' },
-    { id: 4, nombre: 'Zapatilla Casual', precio: '$60', imagen: 'https://via.placeholder.com/300x200?text=Producto+4' },
-    { id: 5, nombre: 'Zapatilla Running', precio: '$80', imagen: 'https://via.placeholder.com/300x200?text=Producto+5' },
-    { id: 6, nombre: 'Zapatilla Urbana', precio: '$65', imagen: 'https://via.placeholder.com/300x200?text=Producto+6' },
+    { id: 1, nombre: 'Zapatilla Clásica', precio: '$50', imagen: '/public/imagenes/zapatilla_clasica.jpg' },
+    { id: 2, nombre: 'Zapatilla Deportiva', precio: '$70', imagen: '/public/imagenes/zapatilla_deportiva.jpg' },
+    { id: 3, nombre: 'Zapatilla Elegante', precio: '$90', imagen: '/public/imagenes/zapatilla_elegante.jpg' },
+    { id: 4, nombre: 'Zapatilla Casual', precio: '$60', imagen: '/public/imagenes/zapatilla_casual.jpg' },
+    { id: 5, nombre: 'Zapatilla Running', precio: '$80', imagen: '/public/imagenes/zapatilla_running.jpg' },
+    { id: 6, nombre: 'Zapatilla Urbana', precio: '$65', imagen: '/public/imagenes/zapatilla_urbana.jpeg' },
   ];
 
   const navigate = useNavigate();
