@@ -1,10 +1,7 @@
 import { useState } from 'react'; 
 import { useNavigate } from 'react-router-dom';
 import styles from '../styles/ReservaProducto.module.css';
-import { useEffect } from 'react';
-useEffect(() => {
-    document.title = 'StepSHOES - Reservar Producto';
-  }, []);
+
 const ReservaProducto = () => {
   const [formData, setFormData] = useState({
     modelo: '',

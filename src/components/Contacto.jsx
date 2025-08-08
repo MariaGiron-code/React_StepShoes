@@ -1,12 +1,9 @@
 import { useState } from 'react';
-import { useEffect } from 'react';
 import styles from '../styles/Contacto.module.css';
 
 
 const Contacto = () => {
-  useEffect(() => {
-    document.title = 'StepSHOES - Contacto';
-  }, []);
+  
   const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
   const [success, setSuccess] = useState('');
 
