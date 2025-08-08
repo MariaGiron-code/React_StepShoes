@@ -4,14 +4,14 @@ import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import styles from '../styles/Galeria.module.css';
 
 const Galeria = () => {
-  const productos = [
-    { id: 1, nombre: 'Zapatilla Clásica', precio: '$50', imagen: '/public/imagenes/zapatilla_clasica.jpg' },
-    { id: 2, nombre: 'Zapatilla Deportiva', precio: '$70', imagen: '/public/imagenes/zapatilla_deportiva.jpg' },
-    { id: 3, nombre: 'Zapatilla Elegante', precio: '$90', imagen: '/public/imagenes/zapatilla_elegante.jpg' },
-    { id: 4, nombre: 'Zapatilla Casual', precio: '$60', imagen: '/public/imagenes/zapatilla_casual.jpg' },
-    { id: 5, nombre: 'Zapatilla Running', precio: '$80', imagen: '/public/imagenes/zapatilla_running.jpg' },
-    { id: 6, nombre: 'Zapatilla Urbana', precio: '$65', imagen: '/public/imagenes/zapatilla_urbana.jpeg' },
-  ];
+const productos = [
+  { id: 1, nombre: 'Zapatilla Clásica', precio: '$50', imagen: '/imagenes/zapatilla_clasica.jpg' },
+  { id: 2, nombre: 'Zapatilla Deportiva', precio: '$70', imagen: '/imagenes/zapatilla_deportiva.jpg' },
+  { id: 3, nombre: 'Zapatilla Elegante', precio: '$90', imagen: '/imagenes/zapatilla_elegante.jpg' },
+  { id: 4, nombre: 'Zapatilla Casual', precio: '$60', imagen: '/imagenes/zapatilla_casual.jpg' },
+  { id: 5, nombre: 'Zapatilla Running', precio: '$80', imagen: '/imagenes/zapatilla_running.jpg' },
+  { id: 6, nombre: 'Zapatilla Urbana', precio: '$65', imagen: '/imagenes/zapatilla_urbana.jpeg' },
+];
 
   const navigate = useNavigate();
   const auth = getAuth();
