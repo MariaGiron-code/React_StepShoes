@@ -64,3 +64,6 @@ npm install
 
 # Iniciar servidor de desarrollo
 npm run dev
+
+# Enlace de la página desplegada
+https://react-step-shoes.vercel.app/
