@@ -10,17 +10,17 @@ const Home = () => {
           <div id="sneakerCarousel" className="carousel slide" data-bs-ride="carousel">
             <div className="carousel-inner">
               <div className="carousel-item active">
-                <img src="/public/imagenes/imagen1.jpg" className="d-block w-100" alt="Sneaker 1" />
+                <img src="/imagenes/imagen1.jpg" className="d-block w-100" alt="Sneaker 1" />
                 <div className="carousel-caption d-none d-md-block">
                 </div>
               </div>
               <div className="carousel-item">
-                <img src="/public/imagenes/imagen2.jpg" className="d-block w-100" alt="Sneaker 2" />
+                <img src="/imagenes/imagen2.jpg" className="d-block w-100" alt="Sneaker 2" />
                 <div className="carousel-caption d-none d-md-block">
                 </div>
               </div>
               <div className="carousel-item">
-                <img src="/public/imagenes/imagen7.jpg" className="d-block w-100" alt="Sneaker 3" />
+                <img src="/imagenes/imag" className="d-block w-100" alt="Sneaker 3" />
                 <div className="carousel-caption d-none d-md-block">
                 </div>
               </div>
