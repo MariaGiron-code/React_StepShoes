@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { getAuth, onAuthStateChanged } from 'firebase/auth';
+import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth';
 import { collection, addDoc } from 'firebase/firestore';
 import { db } from '../firebase';
 import styles from '../styles/ReservaProducto.module.css';
@@ -71,6 +71,15 @@ const ReservaProducto = () => {
     alert('Reserva eliminada localmente.');
   };
 
+  const handleLogout = async () => {
+    try {
+      await signOut(auth);
+      navigate('/login');
+    } catch (error) {
+      setError('Error al cerrar sesión: ' + error.message);
+    }
+  };
+
   return (
     <div className={styles.container}>
       <h2>Reservar Zapato</h2>
@@ -126,6 +135,9 @@ const ReservaProducto = () => {
           </button>
         )}
       </form>
+      <button type="button" onClick={handleLogout} className={styles.logoutButton}>
+        Salir
+      </button>
     </div>
   );
 };

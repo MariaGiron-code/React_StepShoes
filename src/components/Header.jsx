@@ -7,7 +7,7 @@ const Header = () => {
     <header className={styles.header}>
       <div className={styles.container}>
         <div className={styles.logo}>
-          <img src="/logo.png" alt="StepShoes Logo" />
+          <img src="public/imagenes/logo.png" alt="StepShoes Logo" />
           <span>StepShoes</span>
         </div>
         <nav>

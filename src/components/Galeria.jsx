@@ -1,7 +1,9 @@
+import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import styles from '../styles/Galeria.module.css';
 
 const Galeria = () => {
-  // Array estático con 6 productos
   const productos = [
     { id: 1, nombre: 'Zapatilla Clásica', precio: '$50', imagen: 'https://via.placeholder.com/300x200?text=Producto+1' },
     { id: 2, nombre: 'Zapatilla Deportiva', precio: '$70', imagen: 'https://via.placeholder.com/300x200?text=Producto+2' },
@@ -10,6 +12,26 @@ const Galeria = () => {
     { id: 5, nombre: 'Zapatilla Running', precio: '$80', imagen: 'https://via.placeholder.com/300x200?text=Producto+5' },
     { id: 6, nombre: 'Zapatilla Urbana', precio: '$65', imagen: 'https://via.placeholder.com/300x200?text=Producto+6' },
   ];
+
+  const navigate = useNavigate();
+  const auth = getAuth();
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      setIsAuthenticated(!!user);
+    });
+
+    return () => unsubscribe();
+  }, [auth]);
+
+  const handleReserve = (producto) => {
+    if (!isAuthenticated) {
+      navigate('/registro');
+    } else {
+      navigate('/reservaProducto', { state: { producto } });
+    }
+  };
 
   return (
     <div className={styles.container}>
@@ -21,7 +43,7 @@ const Galeria = () => {
             <div className={styles.productInfo}>
               <h3 className={styles.productName}>{producto.nombre}</h3>
               <p className={styles.productPrice}>{producto.precio}</p>
-              <button className={styles.addButton}>Reservar </button>
+              <button className={styles.addButton} onClick={() => handleReserve(producto)}>Reservar</button>
             </div>
             <div className={styles.productDescription}>
               <p>Descripción breve del producto. Ideal para uso diario y actividades deportivas.</p>

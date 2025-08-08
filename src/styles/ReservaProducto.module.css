@@ -1,82 +1,118 @@
 .container {
-  max-width: 750px; 
-  width: 60%; 
+  max-width: 750px;
+  width: 60%;
   margin: 30px auto;
   padding: 50px;
-  background: linear-gradient(135deg, #1a252d, #2a3d4e); 
-  color: #e0e7ff; 
+  background: linear-gradient(135deg, #1a252d, #2a3d4e);
+  color: #e0e7ff;
   border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); 
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 .form {
   display: flex;
   flex-direction: column;
-  gap: 30px; /* Más espacio entre grupos */
-  width: 100%; 
+  gap: 30px; 
+  width: 100%;
 }
 
 .formGroup {
   display: flex;
   flex-direction: column;
-  width: 100%; 
+  width: 100%;
 }
 
 .formGroup label {
   margin-bottom: 8px;
   font-weight: 600;
-  color: #a3bffa; 
+  color: #a3bffa;
   text-transform: uppercase;
-  letter-spacing: 1px; 
+  letter-spacing: 1px;
 }
 
 .formGroup input {
-  padding: 15px; 
-  border: 3px solid #3a506b; 
-  border-radius: 12px; 
-  background-color: #ffffff; 
-  color: #1a252d; 
-  width: 100%; 
-  box-sizing: border-box; 
+  padding: 15px;
+  border: 3px solid #3a506b;
+  border-radius: 12px;
+  background-color: #ffffff;
+  color: #1a252d;
+  width: 100%;
+  box-sizing: border-box;
   transition: border-color 0.3s ease;
 }
 
 .formGroup input:focus {
   border-color: #f49b42;
-  outline: none; /* Elimina outline predeterminado */
+  outline: none;
   box-shadow: 0 0 10px rgba(244, 155, 66, 0.3);
 }
 
 button {
   padding: 15px;
-  background: linear-gradient(90deg, #f49b42, #ffaa66); 
+  background: linear-gradient(90deg, #f49b42, #ffaa66);
   border: none;
   border-radius: 12px;
-  color: #ffffff; 
+  color: #ffffff;
   font-weight: 700;
   font-size: 16px;
   cursor: pointer;
-  width: 100%; 
   text-transform: uppercase;
   letter-spacing: 1px;
   transition: transform 0.2s ease, background 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  width: 100%; 
 }
 
 button:hover {
-  background: linear-gradient(90deg, #e68a2e, #ff8c33); 
-  transform: translateY(-2px); 
+  background: linear-gradient(90deg, #e68a2e, #ff8c33);
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: translateY(0); 
+}
 
 .deleteButton {
-  background: linear-gradient(90deg, #dc3545, #e74c3c); /* Gradiente rojo para boton eliminar */
+  background: linear-gradient(90deg, #dc3545, #e74c3c); 
   margin-top: 15px;
 }
 
 .deleteButton:hover {
-  background: linear-gradient(90deg, #c82333, #d32f2f); 
+  background: linear-gradient(90deg, #c82333, #d32f2f);
 }
 
 .deleteButton:active {
-  transform: translateY(0); /* Vuelve a la posición original al hacer clic */
+  transform: translateY(0); 
 }
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
+.logoutButton {
+  background: linear-gradient(90deg, #6c757d, #868e96); 
+  margin-top: 15px;
+}
+
+.logoutButton:hover {
+  background: linear-gradient(90deg, #5a6268, #737b7e);
+}
+
+.logoutButton:active {
+  transform: translateY(0); 
+}
+
+
+.buttonGroup {
+  display: flex;
+  gap: 15px; 
+  flex-wrap: wrap; 
+  margin-top: 20px; 
+}
+
+@media (max-width: 600px) {
+  .buttonGroup {
+    flex-direction: column; 
+    gap: 10px; 
+  }
+
+  .buttonGroup button {
+    width: 100%; 
+  }
 }

@@ -1,13 +1,16 @@
 .main {
   background-color: #121d23;
-  padding: 100px 0;
+  padding: 80px 0;
 }
 
 .galleryContainer {
   display: flex;
-  justify-content: center;
-  gap: 20px;
   flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px; 
+  padding: 0 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .productCard {
@@ -15,45 +18,83 @@
   color: #fff;
   border: 1px solid #333;
   border-radius: 10px;
-  padding: 15px;
-  width: 300px;
+  padding: 20px;
+  width: 260px;
   text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.productCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 .productImg {
-  width: 150px;
+  width: 160px;
   height: auto;
   border-radius: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
+}
+
+.productInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .productInfo h2 {
   font-size: 1.2rem;
-  margin-bottom: 10px;
+  margin: 0;
+  font-weight: 600;
 }
 
 .sizes h3,
 .colors h3 {
   font-size: 1rem;
-  margin-bottom: 5px;
+  margin: 0;
+  font-weight: 500;
 }
 
 .sizes p,
 .colors p {
   font-size: 0.9rem;
   margin: 0;
+  color: #ccc;
 }
 
 .btnVerMas {
   background-color: #f89b4b;
   border: none;
   color: #fff;
-  padding: 8px 15px;
+  padding: 8px 16px;
   border-radius: 5px;
   cursor: pointer;
-  margin-top: 10px;
+  margin-top: 12px;
+  transition: background-color 0.3s ease;
 }
 
 .btnVerMas:hover {
   background-color: #e38735;
+}
+
+@media (max-width: 900px) {
+  .productCard {
+    width: 220px;
+  }
+}
+
+@media (max-width: 600px) {
+  .galleryContainer {
+    gap: 16px;
+    padding: 0 12px;
+  }
+
+  .productCard {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
 }
