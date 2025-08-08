@@ -45,13 +45,14 @@ const Contacto = () => {
       <div className={styles.location}>
         <h2>Ubicación</h2>
         <div className={styles.mapContainer}>
-          <iframe
-            src="https://www.google.com/maps/embed?pb=..."
-            width="100%"
-            height="400"
-            style={{ border: 0 }}
-            allowFullScreen=""
-            loading="lazy"
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9154.688264629824!2d-78.50457673897806!3d-0.20540377331623902!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d59a1665089e47%3A0x48402f6dec8c8ff6!2sZurita%20Shoes%20Co.!5e0!3m2!1ses-419!2sec!4v1754663650122!5m2!1ses-419!2sec" 
+            width="100%" 
+            height="400" 
+            style={{ border: 0 }} 
+            allowFullScreen="" 
+            loading="lazy" 
+            referrerPolicy="no-referrer-when-downgrade"
           ></iframe>
         </div>
       </div>
